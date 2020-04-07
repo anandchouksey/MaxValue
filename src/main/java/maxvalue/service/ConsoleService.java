@@ -42,7 +42,7 @@ public class ConsoleService {
     /**reads and validates x and y parameters
      * */
     public void readAndValidate() {
-        logger.info("input values for x and y");
+        logger.info("input values");
         boolean readValidateFlag = false;
         while (!readValidateFlag) {
             input = read();
@@ -85,7 +85,6 @@ public class ConsoleService {
 
         while (counter < y) {
             boolean flag = readAndValidate(false);
-            flag = validateRange(i, j, k, flag);
             updateIntegers(i, j, k, flag);
             if (flag) {
                 counter++;
@@ -107,6 +106,7 @@ public class ConsoleService {
                     i = Integer.parseInt(input[0]);
                     j = Integer.parseInt(input[1]);
                     k = Integer.parseInt(input[2]);
+                    inputCheck = validateRange(i, j, k);
                 } catch (NumberFormatException e) {
                     logger.info("invalid input of i,j, k params");
                     inputCheck = false;
@@ -118,8 +118,8 @@ public class ConsoleService {
 
     /**validating i,j and k parameters for the given range
      * */
-    public boolean validateRange(int i, int j, int k, boolean inputCheck) {
-        return inputCheck && validationService.validate(i, j)
+    public boolean validateRange(int i, int j, int k) {
+        return  validationService.validate(i, j)
                 && validationService.validate(i, 1, x)
                 && validationService.validate(j, 1, x)
                 && validationService.validate(k, 0, (int) Math.pow(10, 9));
