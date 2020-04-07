@@ -121,7 +121,7 @@ public class ConsoleService {
     public boolean validateRange(int i, int j, int k) {
         return  validationService.validate(i, j)
                 && validationService.validate(i, 1, x)
-                && validationService.validate(j, 1, x)
+                && validationService.validate(j, i, x)
                 && validationService.validate(k, 0, (int) Math.pow(10, 9));
     }
 
