@@ -25,7 +25,7 @@ To run it on your machine you would need the following to be pre-installed:
 7. Input values in the respective format either all at once or one by one
 8. Appropriate loggers will track the application progress.
 9. To continue testing the application, kindly enter yes.
-In case of any other input application exits.
+In case of any other input, application exits.
 
 ```cmd
 In case of running from command line
@@ -34,13 +34,13 @@ execute > mvn clean install
 (after successful build)
 execute > mvn spring-boot:run
 Input values in the respective format either all at once or one by one
-appropriate loggers will demonstrate the track of application proceeding.
+appropriate loggers will track the application progress.
 In case of continue to test the application, kindly enter yes.
 In case of any other input application exits.
 ```
 
 ## Result types
-1. In case of successful run, application will return the largest element 
+In case of successful run, application will return the largest element 
 in the list after series of addition operations.
 
 ## Limitations
@@ -60,12 +60,16 @@ Cons-
 1. Numerous small readable methods in console service(still follows 5-9 rules methods per class).
 2. Single threaded
 
-Other proposed approach: \
+Other proposed approach: 
 1. Usage of bean validation replacing validation service.
-2. Introduce model class
-3. Thread safe methods
+2. Thread safe methods.
 
 Cons-
 1. Objects consume more memory than primitives
 2. Hibernate validator slows down application start up time
 3. Pre compiled regex could be used, but is over engineered solution in this case.
+
+## Documentation
+1. Appropriate comments have been added in the code for code walkthrough.\
+Should be removed in production environment.
+2. Method name follows the clean code conventions.

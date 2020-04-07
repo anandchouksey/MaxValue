@@ -27,6 +27,8 @@ public class ConsoleService {
 
     private int[] integers;
 
+    /** execution starts
+     * */
     public void execute() {
         boolean executeFlag = false;
         while (!executeFlag) {
@@ -59,6 +61,8 @@ public class ConsoleService {
         }
     }
 
+    /**reads input and returns string array
+     * */
     public String[] read() {
         try {
             input = reader.readLine().split("\\s");
@@ -73,7 +77,7 @@ public class ConsoleService {
                 && validationService.validate(y, 1, 2 * ((int) Math.pow(10, 5)));
     }
 
-    /**this method reads and validates input params and updates the list
+    /**reads and validates input params and updates the list
      * */
     public void readValidateAndUpdate() {
         int counter = 0;
@@ -90,6 +94,9 @@ public class ConsoleService {
         logger.info("Max value in the list: " + maxValueService.findMax(integers));
     }
 
+    /**calls read method for reading and validation service validate method
+     * for validated input
+     * */
     public boolean readAndValidate(boolean inputCheck) {
         while (!inputCheck) {
             input = read();
@@ -109,6 +116,8 @@ public class ConsoleService {
         return inputCheck;
     }
 
+    /**validating i,j and k parameters for the given range
+     * */
     public boolean validateRange(int i, int j, int k, boolean inputCheck) {
         return inputCheck && validationService.validate(i, j)
                 && validationService.validate(i, 1, x)
@@ -116,12 +125,16 @@ public class ConsoleService {
                 && validationService.validate(k, 0, (int) Math.pow(10, 9));
     }
 
+    /**update integers
+     * */
     public void updateIntegers(int i, int j, int k, boolean inputCheck) {
         if (inputCheck) {
             integers = maxValueService.update(integers, i, j, k);
         }
     }
 
+    /**execution continue
+     * */
     public boolean continueExecute() {
         logger.info("Do you wish to continue? Enter yes to continue, any other input exits the app");
         String[] input = read();
