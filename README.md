@@ -73,3 +73,8 @@ Cons-
 1. Appropriate comments have been added in the code for code walkthrough.\
 Should be removed in production environment.
 2. Method name follows the clean code conventions.
+
+## Test coverage
+1. MaxValueService and ValidationService are covered with Junit tests.
+2. ConsoleService is more appropriate for integration testing (to be added). 
+
