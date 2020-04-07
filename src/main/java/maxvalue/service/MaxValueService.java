@@ -1,12 +1,9 @@
 package maxvalue.service;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 @Service
 public class MaxValueService {
@@ -15,8 +12,7 @@ public class MaxValueService {
 
     public Integer findMax(int[] integers) {
         logger.info("finding max value");
-        List integerList = Arrays.asList(ArrayUtils.toObject(integers));
-        return (Integer) Collections.max(integerList);
+        return Arrays.stream(integers).max().getAsInt();
     }
 
     public int[] update(int[] integers, int startIndex, int endIndex, int updateValue) {
