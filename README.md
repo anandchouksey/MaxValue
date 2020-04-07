@@ -1,5 +1,5 @@
 # MaxValue
-Spring Boot Project demonstrating finding maximum value in a list after series of addition operations.
+Spring Boot Project finding maximum value in a list after series of addition operations.
 
 ## Requirements
 To run it on your machine you would need the following to be pre-installed:
@@ -39,7 +39,7 @@ In case of continue to test the application, kindly enter yes.
 In case of any other input application exits.
 ```
 
-## Result types
+## Result
 In case of successful run, application will return the largest element 
 in the list after series of addition operations.
 
