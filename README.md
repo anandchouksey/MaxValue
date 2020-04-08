@@ -47,7 +47,10 @@ in the list after series of addition operations.
 Application works only for single threaded environment.
 
 ## Trade offs
-Current approach: \
+Current approach: 
+
+Layered Architecture: 
+
 Pros-
 1. Usage of array to get O(1) for accessing elements.
 2. Small reusable overloaded methods.
@@ -62,13 +65,25 @@ Cons-
 3. With increased operations and list size, application processing time slightly increases due to increased iterations.
 
 Other proposed approach: 
-1. Usage of bean validation replacing validation service.
-2. Thread safe methods.
+
+Layered Architecture:
+
+Pros-
+1. Command line application
+2. Usage of bean validation replacing validation service.
+3. Thread safe methods/vector.
+
+MVC Architecture:
+
+Pros-
+1. View interface to enter input or submit input files(favourable for hige input file) using thymeleaf.
+2. Bean Validation replacing validation service.
+3. Thread safe methods/vector.
 
 Cons-
 1. Objects consume more memory than primitives
 2. Hibernate validator slows down application start up time
-3. Pre compiled regex could be used, but is over engineered solution in this case.
+3. Regex could also be used instead of hibernate validator, but is over engineered solution in this case.
 
 ## Documentation
 1. Appropriate comments have been added in the code for code walkthrough.\
